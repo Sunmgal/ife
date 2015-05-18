@@ -1,0 +1,626 @@
+--  reset  --*/
+html{
+	height: 100%;
+}
+
+body{
+	margin: 0;
+	height: 100%;
+}
+
+a{
+	text-decoration: none;
+	color: #000;
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+}
+
+li{
+	list-style: none;
+}
+
+img{
+	border: none;
+}
+
+p{
+	margin: 0;
+}
+/*--  reset End  --*/
+
+
+/*--  common --*/
+.focus{
+	background: #fff;
+}
+
+ 
+
+/*--  common End  --*/
+
+
+
+/*--  container  --*/
+.container{
+	height: 100%;
+	width: 100%;
+}
+
+/*--  container End  --*/
+
+
+/*--  banner  --*/
+.banner{
+	height: 66px;
+	width: 100%;
+	background: #dddddd;
+	z-index: -1;
+}
+
+.banner span{
+	font-size: 20px;
+	font-family: "微软雅黑";
+	line-height: 3;
+	color: #9c9c9c;
+	margin-left: 30px; 	
+}
+
+/*--  banner End  --*/
+
+/*--  content  --*/
+
+/*--  left  --*/
+.content{
+	height: 90%;
+	width: 100%;
+	overflow: hidden;
+}
+
+.content .left{
+	width: 200px;
+	height: 90%;
+	background: #f2f2f2;
+	position: absolute;
+	left: 0;
+	top: 10%;	
+	overflow: hidden;
+	border-right: 1px solid #ccccce;
+	border-top: 1px solid #ccccce;
+	box-sizing: border-box;	
+}
+
+.content .left p{
+	text-indent: 10px;
+	padding: 10px 0;
+}
+
+.content .left .sidebar{
+	height: 100%;
+	width: 100%;
+}
+
+.content .left .alltask{
+	width: 100%;
+	cursor: pointer;
+}
+
+.content .left .alltask .xclose{
+	opacity:0;
+	margin-left: 10px;
+}
+
+
+.content .left .alltask .alltitle{
+	margin-left: 20px;
+	width: 100%;
+	height: 30px;
+	display: inline-block;
+	line-height: 30px;
+}
+
+.content .left .alltask ul{
+	width: 100%;
+	display: none;
+}
+
+
+.content .left .alltask ul li{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-indent: 2em;
+}
+ 
+.content .left .sidebar .sidebar-title{
+	margin-left: 20px;
+	cursor: pointer;
+}
+
+.content .left .sidebar .sidebar-list li{
+	width: 100%;
+/*	padding: 10px 0;*/
+	line-height:38px; 
+}
+
+.content .left .sidebar .sidebar-list li span{
+	padding-left: 20px;
+	cursor: pointer;
+}
+
+.content .left .sidebar .sidebar-list li span img{
+	margin-right: 10px;
+}
+
+.content .left .sidebar .sidebar-list li ul{
+	display: none;
+}
+
+.content .left .sidebar .sidebar-list li ul li{
+	font-size: 14px;
+	cursor: pointer;
+}
+
+ 
+
+.content .left .sidebar .sidebar-list li .title{
+	display: block;
+	height: 38px;
+	width: 100%;
+}
+
+.content .left .sidebar .sidebar-list li .title .xclose{
+	margin-left: 10px;
+	opacity: 0;
+}
+
+ 
+
+.content .left .sidebar .sidebar-list li ul li img{
+ 	margin: 0 5px 0 35px;
+}
+
+.content .left .sidebar .sidebar-list li ul li{
+	position: relative;
+}
+
+.content .left .sidebar .sidebar-list li ul li img.xxclose{
+	margin-left: 10px;
+	opacity: 0;	
+}
+
+/*.content .left .sidebar .sidebar-list li ul li .delete{
+	height: 20px;
+	width: 20px;
+	position: absolute;
+	right: 40px;
+	top: 10px;
+	background: red;
+	opacity: 0;
+}
+*/
+
+.content .left .add-class{
+	height: 30px;
+	width: 100%;
+	background: #eeeeee;
+	position: absolute;
+	bottom: 0;
+	border-top: 1px solid #cececc;
+	border-right: 1px solid #cececc;	
+}
+
+.content .left .add-class a {
+	height: 20px;
+	width: 40px;
+	display: block;
+	line-height: 30px;
+	float: left;
+
+}
+.content .left .add-class a img{
+	margin: 6px 0 0 10px;
+}
+
+.content .left .add-class span{
+	font-size: 12px;
+	display: block;
+	float: left;
+	padding-top: 10px;
+}
+
+ 
+ 
+
+/*--  left End  --*/
+
+/*--  middle  --*/
+.content .middle{
+	width: 250px;
+	height: 90%;
+	background: #ffffff;
+	position: absolute;
+	top: 10%;
+	left: 200px;
+	border-right: 1px solid #cececc;
+	box-sizing: border-box;		
+	overflow: hidden;
+}
+
+.content .middle .tabs{
+	height: 30px;
+	width: 100%;
+	background: #eeeeee;
+	padding-left: 10px;
+	border-top: 1px solid #ccccce;
+	border-bottom: 1px solid #ccccce;
+	box-sizing: border-box;		
+}
+
+.content .middle .tabs li{
+	padding: 2px 3px;
+	font-size: 12px;
+	float: left;
+	margin-right: 20px;
+	margin-top: 5px;
+	cursor: pointer;
+}
+
+.content .middle .tabs li.showTab{
+	background: #ffffff;
+	border: 1px solid #cecece;
+}
+
+
+.content .middle .do-list{
+	height: 100%;
+	background: #ffffff;
+}
+
+.content .middle .do-list li span{
+	display: block;
+	height: 20px;
+	width: 100%;
+	line-height: 10px;
+	background: #fafaee;
+	padding-left: 20px;
+	padding-top: 10px;
+	font-family: "微软雅黑";
+}
+
+.content .middle .do-list li ul{
+	font-size: 13px;	
+}
+
+.content .middle .show{
+	display: block;
+}
+
+.content .middle .hidden{
+	display: none;
+}
+
+.content .middle .do-list li ul li{
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	padding: 5px 0 5px 20px;	
+}
+
+.content .middle .do-list li ul li.active{
+	background:#f2f2f2;
+}
+
+.content .middle  .add-task{
+	height: 30px;
+	width: 100%;
+	background: #eeeeee;
+	position: absolute;
+	bottom: 0;
+	border-top: 1px solid #cececc;
+	border-right: 1px solid #cececc;	
+}
+
+.content .middle  .add-task a {
+	height: 20px;
+	width: 40px;
+	display: block;
+	line-height: 30px;
+	float: left;
+
+}
+.content .middle .add-task a img{
+	margin: 6px 0 0 10px;
+}
+
+.content .middle  .add-task span{
+	font-size: 12px;
+	display: block;
+	float: left;
+	padding-top: 10px;
+}
+
+
+/*--  middle End  --*/
+
+/*--  right  --*/
+.content .right{
+	height: 90%;
+	position: absolute;
+	left: 450px;
+	top: 10%;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+	box-sizing:border-box;
+}
+
+.content .right .content{
+	height: 100%;
+	width: 100%;
+	background:#ffffff;
+	border-top: 1px solid #cececc;
+	box-sizing:border-box;	
+}
+
+.content .right .content .title{
+	width: 100%;
+	height: 55px;
+	background: #f2f2f2;
+	position: relative;
+	border-bottom: 1px solid #cececc;	
+}
+
+.content .right .content .title p{
+	height: 55px;
+	padding-left:20px;
+	line-height: 55px;
+}
+
+.content .right .content .title p input{
+	width: 250px;
+	height: 25px;
+	text-indent: 1em;	
+}
+
+.content .right .content .title p .titleError{
+	font-size: 12px;
+ 	margin-left: 15px;
+ 	color: red;
+ 	display: none;
+}
+
+.content .right .content .date .dateError{
+	font-size: 12px;
+	margin-left: 10px;
+	color: red;
+	display: none;
+}
+
+.content .right .content .title .operate{
+	height: 55px;
+	width: 100px;
+	position: absolute;
+	right: 0px;
+	top: 10px;
+}
+.content .right .content .title .operate a{
+	margin-right: 10px;
+}
+
+.content .right .content .title .titleError{
+	position: absolute;
+}
+
+.content .right .content .date{
+	width: 100%;
+	height: 55px;
+	background: #fafaee;
+	position: relative;	
+	line-height: 55px;
+	padding-left: 20px;
+	border-bottom: 1px solid #cececc;	
+}
+
+.content .right .content .date input{
+	height: 30px;
+	width: 250px;
+	text-indent: 1em;
+}
+
+.content .right .content .detail{
+	position: absolute;
+	background: #ffffff;
+	max-width: 820px;
+	padding: 50px;
+ 	height: 100%;
+	overflow:hidden;
+}
+
+ 	
+/*--  right End  --*/
+
+
+
+/*--  taskbox  --*/
+
+
+/*--  taskbox End  --*/
+
+/*--  alertbox  --*/
+ 
+.class{
+	border: 3px solid #F60;
+	background: #f60;
+	position: relative;
+	border-radius: 10px;	
+}
+
+.classify{
+	height: 160px;
+	width: 300px;
+	top: 40%;
+	left: 50%;
+	margin-left: -150px;
+	margin-top: -80px;
+	display: none;
+}
+
+
+.inpstyle{
+	position: absolute;
+	height: 30px;
+	width: 200px;
+	text-indent: 1em;
+	border-radius: 10px;
+	outline: none;
+}
+
+.classibtn{
+	height: 30px;
+	width: 40px;
+	background: #fff;
+	border-radius: 5px;
+	outline: none;
+}
+
+.confirm{
+	margin: 110px 0 0 90px;
+}
+
+.reset{
+	margin-left: 30px;
+}
+
+.classify input{
+	top: 50px;
+	left: 50px;
+}
+
+.classify span{
+	color: white;
+	position: absolute;
+	top: 10px;
+	left: 5px;
+	font-size: 12px;
+
+}
+
+
+/*--  alertbox End  --*/
+
+/*--  addTask  --*/
+.addTask{
+ 	height: 90%;
+ 	width: 100%;
+ 	position: absolute;
+ 	background: rgba(0,0,0,0.5);
+ 	display: none;
+}
+
+.addTask .taskContent{
+	height: 500px;
+	width: 800px;
+	background: #fff;
+ 	border-radius: 10px; 	
+	position: relative;	
+	top: 50px;
+	left: 260px;
+}
+
+.addTask .taskContent .tasktitle,.taskdate {
+	 height: 30px;
+	 width: 300px; 	
+	 text-indent: 1em;
+}
+
+.addTask .taskContent .tasktitle{
+	position: absolute;
+	left: 80px;
+	top: 30px;
+	outline-color: #F60;
+}
+
+.addTask .taskContent .titlenote{
+	position: absolute;
+	left: 400px;
+	top: 40px;
+	font-size: 12px;
+	color: red;
+	display: none;
+}
+
+.addTask .taskContent .taskdate{
+	position: absolute;
+	left: 80px;
+	top: 80px;
+	outline-color: #F60;	
+}
+
+.addTask .taskContent .datenote{
+	position: absolute;
+	left: 400px;
+	top: 90px;
+	font-size: 12px;
+	color: red;
+	display: none;
+}
+
+.addTask .taskContent .taskdetail{
+	position: absolute;
+	left: 80px;
+	top: 130px;
+	resize:none;
+	width: 600px;
+	height: 300px;
+	text-indent: 1em;
+	font-size: 14px;
+	line-height: 30px;
+	outline-color: #F60;
+}
+
+.addTask .taskContent .detailnote{
+	position: absolute;
+	left: 500px;
+	top: 450px;
+	font-size: 12px;
+	color: red;	
+	display: none;
+}
+
+.addTask .taskContent .taskconfirm,.taskcancle{
+	position: absolute;
+	height: 30px;
+	width: 50px;
+}
+
+.addTask .taskContent .taskconfirm{
+	top: 450px;
+	left: 80px;
+	background: #F60;
+	height: 30px;
+	width: 60px;
+	color: #fff;
+	border-radius: 5px;
+	outline: none;
+}
+
+.addTask .taskContent .taskcancle{
+	top: 20px;
+	right: 20px;
+	font-size: 10px;
+	background: none;
+	outline: none;
+	height: 40px;
+	width: 40px;
+	border-radius: 40px;
+	font-weight: bold;
+}
+
+ 
+
+/*--  addTask End  --*/
+
+/*--  content End  --

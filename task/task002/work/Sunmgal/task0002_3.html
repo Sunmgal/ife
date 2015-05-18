@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>task0002_3</title>
+	<style type="text/css">
+	ul{
+		margin: 0;
+		padding: 0;
+	}
+	li{
+		list-style: none;
+		float: left;
+	}
+	img{
+		display: block;
+	}
+	#div{
+		height: 280px;
+		width: 520px;
+		border: 2px solid black;
+		position: relative;
+		margin: 100px auto;
+		overflow: hidden;
+	}
+	#oul{
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
+	#div p{
+		width: 180px;
+		height: 30px;
+ 		position: absolute;
+ 		bottom: 10px;
+ 		left: 50%;
+ 		margin-left: -90px;
+	}
+	#div span{
+		display: block;	
+		height: 20px;
+		width: 20px;
+		background: #000;
+		border-radius: 20px;
+		float: left;
+		margin-left: 10px;
+	} 
+	#div span.current{
+		background: #F90;
+	}	
+	</style>
+	<script src="js/task0002_3.js"></script>
+</head>
+<body>
+	<div id="div">
+		<ul id="oul">
+			<li><img src="img/1.jpg"></li>
+			<li><img src="img/2.jpg"></li>
+			<li><img src="img/3.jpg"></li>
+			<li><img src="img/4.jpg"></li>
+			<li><img src="img/5.jpg"></li>	
+		</ul>
+		<p>
+			<span class="current"></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</p>
+	</div>
+</body>
+</html>
