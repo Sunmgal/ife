@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>To-do</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="banner">
+			<span>Sunmgal Tools</span>			
+		</div>
+		<div class="content">
+			<!--  left  -->
+			<div class="left">
+				<div class="alltask" id="alltask">
+					<span id="alltitle" class="alltitle">所有任务(11)</span>
+					<ul id="all-list"></ul>
+				</div>				
+				<div class="sidebar">			
+					<span class="sidebar-title" id="sorttitle">分类列表</span>
+					<ul class="sidebar-list" id="sidebarList" >
+						<li class="lilili">
+							<span class="title" id="title1"><img src="img/pic1.png" />个人项目(10)<img src="img/pic2.png" class="xclose" /></span>
+							<ul></ul>
+						</li>
+						<li class="lilili">
+							<span class="title" id="title2"><img src="img/pic1.png" />毕业设计(1)<img src="img/pic2.png" class="xclose" /></span>
+							<ul></ul>								
+						</li>
+
+						<li class="lilili">
+							<span class="title" id="title3"><img src="img/pic1.png" />社团活动(0)<img src="img/pic2.png" class="xclose" /></span>
+							<ul></ul>
+						</li>
+						
+						<li class="lilili">
+							<span class="title" id="title4"><img src="img/pic1.png" />家庭活动(0)<img src="img/pic2.png" class="xclose" /></span>
+							<ul></ul>							
+						</li>
+						
+						<li class="lilili">
+							<span class="title" id="default"><img src="img/pic1.png" />默认分类(0)<img src="img/pic2.png" class="xclose" /></span>
+							<ul></ul>							
+						</li>
+					</ul>
+				</div>
+				<div class="add-class" id="addclass">
+					<a href="#" id="addclass"><img src="img/pic3.png"></a>
+					<span>新增分类</span>
+				</div>
+			</div>
+			<!--  left End -->
+			
+			<!--  middle  -->			
+			<div class="middle" id="tablist">
+				<ul class="tabs" id="tabs">
+					<li class="showTab">所有</li>
+					<li>未完成</li>
+					<li>已完成</li>
+				</ul>
+			<!-- do-list -->
+				<ul class="list" id="list">
+					<!-- 所有 -->
+					<li class="do-list" style="display:block;">
+						<ul id="alltasklist"></ul>											
+					</li>
+					<!-- 未完成 -->
+					<li class="do-list" style="display:none;">
+						<ul id="undotask"></ul>						
+					</li>
+					<!-- 已完成 -->
+					<li class="do-list" style="display:none;">
+						<ul id="dotask"></ul>						
+					</li>
+				</ul>
+		
+				<div class="add-task" id="addbtn">
+					<a href="#"><img src="img/pic3.png"></a>
+					<span>新增任务</span>
+				</div>
+
+			</div>
+			<!--  middle End  -->
+
+			<!--  right  -->
+			<div class="right">
+				<div class="content">
+					<div class="title">
+						<p>标题</p>
+						<div class="operate">
+							<a href="#"><img src="img/pic4.png" /></a>
+							<a href="#"><img src="img/pic5.png" /></a>		
+						</div>	
+					</div>
+					<div class="date">
+ 						<p>日期</p>		
+					</div>
+					<div class="detail"> 	
+					内容
+					</div>
+				</div>
+			</div>
+			<!--  right End  -->		
+	
+		</div>
+
+		<!-- alertbox -->
+		<div class="classify class" id="addbox">
+			<span>新增分类</span>
+			<input type="text" class="inpstyle" placeholder="添加新的分类" id="addtext" />
+			<input type="button" value="确认" id="confirm" class="classibtn confirm" />
+			<input type="button" value="取消" id="reset" class="classibtn reset">
+		</div>
+
+		<!-- alertbox -->
+		<div class="addTask" id="addTask">
+			<div class="taskContent">
+				<input type="text" placeholder="请输入标题" class="tasktitle" id="tasktitle" /><span class="titlenote" id="titlenote"></span>
+				<br/>
+				<input type="text" placeholder="时间格式为XXXX-YY-ZZ" class="taskdate" id="taskdate" /><span class="datenote" id="datenote"></span>
+				<br/>
+				<textarea class="taskdetail" placeholder="请输入内容" id="taskdetail"></textarea><span class="detailnote" id="detailnote"></span>
+				<input type="button" value="确定" class="taskconfirm" id="taskconfirm" />
+				<input type="button" value="X" class="taskcancle" id="taskcancle" title="关闭" />
+			</div>
+		</div>		
+
+	</div>
+
+	<!-- 引入js -->
+ 	<script src="js/until.js" ></script>
+	<script src="js/task0003.js"></script>
+</body>
+</html>

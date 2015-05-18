@@ -8,26 +8,26 @@ function isArray(arr){
  }
 
 // ?  使用递归来实现一个深度克隆
-    function cloneObject(src) {   
-        var buf;   
-        if (src instanceof Array) {   
-            buf = [];  //创建一个空的数组 
-            var i = src.length;   
-            while (i--) {   
-                buf[i] = cloneObject(src[i]);   
-            }   
-            return buf; 
-        }        
-        else if(src instanceof Object){   
-            buf = {};  //创建一个空对象 
-            for (var k in src) {  //为这个对象添加新的属性 
-                buf[k] = cloneObject(src[k]);   
-            }   
-            return buf;   
-        }else{   
-            return src;   
+function cloneObject(src) {   
+    var buf;   
+    if (src instanceof Array) {   
+        buf = [];  //创建一个空的数组 
+        var i = src.length;   
+        while (i--) {   
+            buf[i] = cloneObject(src[i]);   
         }   
-    } 
+        return buf; 
+    }        
+    else if(src instanceof Object){   
+        buf = {};  //创建一个空对象 
+        for (var k in src) {  //为这个对象添加新的属性 
+            buf[k] = cloneObject(src[k]);   
+        }   
+        return buf;   
+    }else{   
+        return src;   
+    }   
+} 
 
 
 //数组去重
@@ -193,7 +193,7 @@ $("#adom .classa"); // 返回id为adom的DOM所包含的所有子节点中，第
 // 给一个element绑定一个针对event事件的响应，响应函数为listener
 function addEvent(element, event, listener) {
 	if(element.addEventListener){
-		element.addEventListener(event,listener,false);	
+		element.addEventListener(event,listener,false);	//冒泡
 	}else{
 		element.attachEvent('on'+ event,function(){
 			listener.call(element);
@@ -216,7 +216,7 @@ function removeEvent(element, event, listener) {
 
 // 实现对click事件的绑定
 function addClickEvent(element, listener) {
-	element[onclick] = listener;
+	addEvent(element,'click',listener);
 }
 
 // 实现对于按Enter键时的事件绑定
@@ -261,84 +261,84 @@ function getCookie(cookieName){
 }
 
 //6.AJAX
-function createXHR(){
-	if(typeof XMLHttpRequest!="undefined"){
-		return new XMLHttpRequest();//标准浏览器下
-	}else if(typeof ActiveXObject!="undefined"){
-		var version = [
-			'MSXML2.XMLHttp.6.0',
-			'MSXML2.XMLHttp.3.0',
-			'MSXML2.XMLHttp'
-		];
-		for(var i=0;version.length;i++){
-			try{
-				return new ActiveXObject(version[i]);
-			}catch(e){
-				//跳过
-			}
-		}
-	}else{
-		throw new Error("您的浏览器版本不支持XHR");
-	}
-}
-//名值对转换为字符串
-function params(data){
-	var arr=[];
-	for(var i in data){
-		arr.push( encodeURIComponent(i) + '=' + encodeURIComponent(data[i]));//用encodeURIComponent来解决传入数据的&符号
-	}
-	return arr.join('&');
-}
-//封装AJAX
-function ajax(obj,url){
-	var xhr = createXHR();
-	url = url + '?rand='+ Math.random();
-	obj.data = params(obj.data);
-	if(obj.method === 'get') url=url.indexOf('?')==-1?url+'?'+obj.data:url+'&'+obj.data;
-	if(obj.async === true){
-	xhr.onreadystatechange = function(){
-			if(xhr.readyState == 4){
- 				callback();
-			}
-		};	
-	}	
-	xhr.open(obj.method,url,obj.async);		
-	if(obj.method === "post"){	
-		xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded'); 
-		xhr.send(obj.data);		
-	}else{
-		xhr.send(null);
-	}
+// function createXHR(){
+// 	if(typeof XMLHttpRequest!="undefined"){
+// 		return new XMLHttpRequest();//标准浏览器下
+// 	}else if(typeof ActiveXObject!="undefined"){
+// 		var version = [
+// 			'MSXML2.XMLHttp.6.0',
+// 			'MSXML2.XMLHttp.3.0',
+// 			'MSXML2.XMLHttp'
+// 		];
+// 		for(var i=0;version.length;i++){
+// 			try{
+// 				return new ActiveXObject(version[i]);
+// 			}catch(e){
+// 				//跳过
+// 			}
+// 		}
+// 	}else{
+// 		throw new Error("您的浏览器版本不支持XHR");
+// 	}
+// }
+// //名值对转换为字符串
+// function params(data){
+// 	var arr=[];
+// 	for(var i in data){
+// 		arr.push( encodeURIComponent(i) + '=' + encodeURIComponent(data[i]));//用encodeURIComponent来解决传入数据的&符号
+// 	}
+// 	return arr.join('&');
+// }
+// //封装AJAX
+// function ajax(obj,url){
+// 	var xhr = createXHR();
+// 	url = url + '?rand='+ Math.random();
+// 	obj.data = params(obj.data);
+// 	if(obj.method === 'get') url=url.indexOf('?')==-1?url+'?'+obj.data:url+'&'+obj.data;
+// 	if(obj.async === true){
+// 	xhr.onreadystatechange = function(){
+// 			if(xhr.readyState == 4){
+//  				callback();
+// 			}
+// 		};	
+// 	}	
+// 	xhr.open(obj.method,url,obj.async);		
+// 	if(obj.method === "post"){	
+// 		xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded'); 
+// 		xhr.send(obj.data);		
+// 	}else{
+// 		xhr.send(null);
+// 	}
 
-	if(obj.async === false){	
-		callback();
-	}
+// 	if(obj.async === false){	
+// 		callback();
+// 	}
 
-	function callback(){
-		if(xhr.status == 200){
-			obj.success(xhr.responseText); //回调传递参数
-		}else{
-			alert("获取数据错误代号："+ xhr.status +"信息:" + xhr.statusText);
-		}	
-	}
+// 	function callback(){
+// 		if(xhr.status == 200){
+// 			obj.success(xhr.responseText); //回调传递参数
+// 		}else{
+// 			alert("获取数据错误代号："+ xhr.status +"信息:" + xhr.statusText);
+// 		}	
+// 	}
 
-}
-//调用AJAX
-document.onclick = function(){
-	ajax({
-		method:'get',
-		data:{
-			'name':'skq',
-			'age':21
-		},
-		success:function(text){     //回调
-			alert(text)
-		},
-		async:true
-	},'demo.php'
-	);
+// }
+// //调用AJAX
+// document.onclick = function(){
+// 	ajax({
+// 		method:'get',
+// 		data:{
+// 			'name':'skq',
+// 			'age':21
+// 		},
+// 		success:function(text){     //回调
+// 			alert(text)
+// 		},
+// 		async:true
+// 	},'demo.php'
+// 	);
 
-};
+// };
 
 
 
